@@ -1,11 +1,11 @@
 using CounterStrikeSharp.API.Core;
 
-using AutomaticAds.Config;
-using AutomaticAds.Config.Models;
-using AutomaticAds.Managers;
-using AutomaticAds.Utils;
+using Rezads.Config;
+using Rezads.Config.Models;
+using Rezads.Managers;
+using Rezads.Utils;
 
-namespace AutomaticAds.Services;
+namespace Rezads.Services;
 
 public class WelcomeService
 {
@@ -119,7 +119,7 @@ public class WelcomeService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error sending welcome message to player {player.PlayerName ?? "Unknown"}: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error sending welcome message to player {player.PlayerName ?? "Unknown"}: {ex.Message}");
         }
     }
 }
