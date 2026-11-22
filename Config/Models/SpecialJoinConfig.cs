@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace AutomaticAds.Config.Models;
+namespace Rezads.Config.Models;
 
 public class SpecialJoinConfig
 {
