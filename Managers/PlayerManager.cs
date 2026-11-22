@@ -2,21 +2,21 @@ using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using System.Collections.Concurrent;
 
-using AutomaticAds.Models;
-using AutomaticAds.Config;
-using AutomaticAds.Utils;
-using AutomaticAds.Services;
+using Rezads.Models;
+using Rezads.Config;
+using Rezads.Utils;
+using Rezads.Services;
 
-namespace AutomaticAds.Managers;
+namespace Rezads.Managers;
 
 public class PlayerManager
 {
-    private readonly AutomaticAdsBase? _plugin;
+    private readonly RezadsBase? _plugin;
     private readonly ConcurrentDictionary<ulong, PlayerInfo> _playerInfoCache = new();
     private readonly ConcurrentDictionary<ulong, DateTime> _cacheTimestamps = new();
     private ScreenTextService? _screenTextService;
 
-    public PlayerManager(AutomaticAdsBase? plugin = null)
+    public PlayerManager(RezadsBase? plugin = null)
     {
         _plugin = plugin;
     }
@@ -55,7 +55,7 @@ public class PlayerManager
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error getting/creating player info: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error getting/creating player info: {ex.Message}");
             return CreatePlayerInfo(player);
         }
     }
@@ -76,7 +76,7 @@ public class PlayerManager
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error getting basic player info: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error getting basic player info: {ex.Message}");
             return CreatePlayerInfo(player);
         }
     }
@@ -172,7 +172,7 @@ public class PlayerManager
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error clearing player cache: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error clearing player cache: {ex.Message}");
         }
     }
 
@@ -199,7 +199,7 @@ public class PlayerManager
 
         if (expiredKeys.Count > 0)
         {
-            Console.WriteLine($"[AutomaticAds] Cleaned up {expiredKeys.Count} expired cache entries");
+            Console.WriteLine($"[Rezads] Cleaned up {expiredKeys.Count} expired cache entries");
         }
     }
 
@@ -226,7 +226,7 @@ public class PlayerManager
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"[AutomaticAds] Error playing sound to player: {ex.Message}");
+                    Console.WriteLine($"[Rezads] Error playing sound to player: {ex.Message}");
                 }
             });
         }
@@ -277,7 +277,7 @@ public class PlayerManager
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[AutomaticAds] Error sending message to player: {ex.Message}");
+                Console.WriteLine($"[Rezads] Error sending message to player: {ex.Message}");
             }
         });
     }
