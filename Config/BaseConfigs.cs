@@ -1,13 +1,13 @@
 using CounterStrikeSharp.API.Core;
 using System.Text.Json.Serialization;
-using AutomaticAds.Config.Models;
+using Rezads.Config.Models;
 
-namespace AutomaticAds.Config;
+namespace Rezads.Config;
 
 public class BaseConfigs : BasePluginConfig
 {
     [JsonPropertyName("ChatPrefix")]
-    public string ChatPrefix { get; set; } = "[{GREEN}AutomaticAds{WHITE}]{WHITE}";
+    public string ChatPrefix { get; set; } = "[{GREEN}Rezads{WHITE}]{WHITE}";
 
     [JsonPropertyName("GlobalPlaySound")]
     public string? GlobalPlaySound { get; set; } = "ui/panorama/popup_reveal_01";
@@ -37,7 +37,7 @@ public class BaseConfigs : BasePluginConfig
     public List<string> JoinLeaveExcludedNames { get; set; } = new()
     {
         "hvh.gg",
-        "hh.dog"
+        "hvh.dog"
     };
 
     [JsonPropertyName("SpecialJoinMessages")]
@@ -85,7 +85,7 @@ public class BaseConfigs : BasePluginConfig
     {
         new AdConfig
         {
-            Message = "{prefix} {RED}AutomaticAds is the best plugin!",
+            Message = "{prefix} {RED}Rezads is the best plugin!",
             Map = "all",
             Interval = 600,
             DisableSound = false,
@@ -121,7 +121,7 @@ public class BaseConfigs : BasePluginConfig
         },
         new AdConfig
         {
-            Message = "<font class='fontSize-m' color='orange'>This server uses</font><br><font class='fontSize-l' style='color:red;'>AutomaticAds</font></font>",
+            Message = "<font class='fontSize-m' color='orange'>This server uses</font><br><font class='fontSize-l' style='color:red;'>Rezads</font></font>",
             ViewFlag = "@css/generic",
             DisplayType = DisplayType.CenterHtml,
             onDead = true
