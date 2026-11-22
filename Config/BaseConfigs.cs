@@ -41,14 +41,7 @@ public class BaseConfigs : BasePluginConfig
     };
 
     [JsonPropertyName("SpecialJoinMessages")]
-    public List<SpecialJoinConfig> SpecialJoinMessages { get; set; } = new()
-    {
-        new SpecialJoinConfig
-        {
-            SteamID = 0,
-            Message = "{prefix} {GREEN}{playername} {id64} {WHITE}Разработчик присоединился к игре!!!"
-        }
-    };
+    public List<SpecialJoinConfig> SpecialJoinMessages { get; set; } = new();
 
     [JsonPropertyName("WelcomeDelay")]
     public float WelcomeDelay { get; set; } = 3.0f;
