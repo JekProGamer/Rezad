@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
-namespace AutomaticAds.Config.Models;
+namespace Rezads.Config.Models;
 
 public class WelcomeConfig
 {
@@ -70,7 +70,7 @@ public class WelcomeConfig
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error parsing Welcome message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error parsing Welcome message: {ex.Message}");
         }
 
         return string.Empty;
