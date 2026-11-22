@@ -1,7 +1,7 @@
-using AutomaticAds.Utils;
-using AutomaticAds.Config.Models;
+using Rezads.Utils;
+using Rezads.Config.Models;
 
-namespace AutomaticAds.Config;
+namespace Rezads.Config;
 
 public static class ConfigValidator
 {
