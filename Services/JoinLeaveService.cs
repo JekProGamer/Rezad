@@ -280,6 +280,12 @@ public class JoinLeaveService
 
     private bool ShouldProcessJoinLeaveMessage(CCSPlayerController player)
     {
-        return _config.JoinLeave.Any() && player.IsValidPlayer();
+        if (!_config.JoinLeave.Any() || !player.IsValidPlayer())
+            return false;
+
+        string playerName = player.PlayerName ?? string.Empty;
+        return !_config.JoinLeaveExcludedNames.Any(name =>
+            !string.IsNullOrWhiteSpace(name) &&
+            string.Equals(name.Trim(), playerName.Trim(), StringComparison.OrdinalIgnoreCase));
     }
 }
