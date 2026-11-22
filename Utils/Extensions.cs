@@ -2,7 +2,7 @@ using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Admin;
 
-namespace AutomaticAds.Utils;
+namespace Rezads.Utils;
 
 public static class Extensions
 {
