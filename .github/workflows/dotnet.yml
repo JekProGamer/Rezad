@@ -25,18 +25,18 @@ jobs:
         run: dotnet restore
       
       - name: Build
-        run: dotnet build AutomaticAds.csproj -c Release -o ./AutomaticAds
+        run: dotnet build Rezads.csproj -c Release -o ./Rezads
 
       - name: Create release asset
         if: github.event_name == 'release'
         run: |
-          zip -r AutomaticAds-${{ github.event.release.tag_name }}.zip ./AutomaticAds
+          zip -r Rezads-${{ github.event.release.tag_name }}.zip ./Rezads
 
       - name: Upload release asset
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            ./AutomaticAds-${{ github.event.release.tag_name }}.zip
+            ./Rezads-${{ github.event.release.tag_name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
