@@ -33,6 +33,13 @@ public class BaseConfigs : BasePluginConfig
     [JsonPropertyName("JoinLeaveMessages")]
     public bool EnableJoinLeaveMessages { get; set; } = true;
 
+    [JsonPropertyName("JoinLeaveExcludedNames")]
+    public List<string> JoinLeaveExcludedNames { get; set; } = new()
+    {
+        "hvh.gg",
+        "hh.dog"
+    };
+
     [JsonPropertyName("WelcomeDelay")]
     public float WelcomeDelay { get; set; } = 3.0f;
 
