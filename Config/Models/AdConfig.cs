@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
-namespace AutomaticAds.Config.Models;
+namespace Rezads.Config.Models;
 
 public class AdConfig
 {
@@ -174,7 +174,7 @@ public class AdConfig
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error parsing message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error parsing message: {ex.Message}");
         }
 
         return string.Empty;
