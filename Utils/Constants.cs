@@ -1,11 +1,11 @@
-namespace AutomaticAds.Utils;
+namespace Rezads.Utils;
 
 public static class Constants
 {
     public const int MaxInterval = 3600;
     public const int MinInterval = 10;
     public const int MaxPrefixLength = 80;
-    public const string DefaultPrefix = "[AutomaticAds]";
+    public const string DefaultPrefix = "[Rezads]";
     public const string DefaultGlobalSound = "ui/panorama/popup_reveal_01";
     public const string AllMapsKeyword = "all";
     public const string AllPlayersFlag = "all";
