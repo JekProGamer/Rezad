@@ -316,7 +316,7 @@ public class AutomaticAdsBase : BasePlugin, IPluginConfig<BaseConfigs>
 
         var player = @event.Userid;
 
-        if (Config.EnableJoinLeaveMessages || Config.UseMultiLang)
+        if (Config.EnableJoinLeaveMessages || Config.UseMultiLang || Config.SpecialJoinMessages.Any())
         {
             HandlePlayerConnectWithCountryInfo(player);
         }
