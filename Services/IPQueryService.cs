@@ -1,8 +1,8 @@
 using Newtonsoft.Json;
-using AutomaticAds.Utils;
-using AutomaticAds.Models;
+using Rezads.Utils;
+using Rezads.Models;
 
-namespace AutomaticAds.Services;
+namespace Rezads.Services;
 
 public interface IIPQueryService
 {
@@ -70,6 +70,6 @@ public class IPQueryService : IIPQueryService
 
     private static void LogError(string message)
     {
-        Console.WriteLine($"[AutomaticAds] {message}");
+        Console.WriteLine($"[Rezads] {message}");
     }
 }
