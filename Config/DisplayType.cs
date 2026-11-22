@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace AutomaticAds.Config;
+namespace Rezads.Config;
 
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum DisplayType
