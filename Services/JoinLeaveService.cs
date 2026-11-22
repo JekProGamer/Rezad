@@ -1,12 +1,12 @@
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 
-using AutomaticAds.Config;
-using AutomaticAds.Managers;
-using AutomaticAds.Models;
-using AutomaticAds.Utils;
+using Rezads.Config;
+using Rezads.Managers;
+using Rezads.Models;
+using Rezads.Utils;
 
-namespace AutomaticAds.Services;
+namespace Rezads.Services;
 
 public class JoinLeaveService
 {
@@ -135,14 +135,14 @@ public class JoinLeaveService
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine($"[AutomaticAds] Error sending join message to player {targetPlayer.PlayerName ?? "Unknown"}: {ex.Message}");
+                                Console.WriteLine($"[Rezads] Error sending join message to player {targetPlayer.PlayerName ?? "Unknown"}: {ex.Message}");
                             }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"[AutomaticAds] Error in HandlePlayerJoin NextFrame: {ex.Message}");
+                    Console.WriteLine($"[Rezads] Error in HandlePlayerJoin NextFrame: {ex.Message}");
                 }
                 finally
                 {
@@ -152,7 +152,7 @@ public class JoinLeaveService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error in HandlePlayerJoin: Player '{playerName ?? "Unknown"}' - {ex.Message}");
+            Console.WriteLine($"[Rezads] Error in HandlePlayerJoin: Player '{playerName ?? "Unknown"}' - {ex.Message}");
             _processedJoins.Remove(steamId);
         }
     }
@@ -178,14 +178,14 @@ public class JoinLeaveService
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"[AutomaticAds] Error sending special join message to {targetPlayer.PlayerName ?? "Unknown"}: {ex.Message}");
+                        Console.WriteLine($"[Rezads] Error sending special join message to {targetPlayer.PlayerName ?? "Unknown"}: {ex.Message}");
                     }
                 }
             });
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error preparing special join message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error preparing special join message: {ex.Message}");
         }
     }
 
@@ -278,13 +278,13 @@ public class JoinLeaveService
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine($"[AutomaticAds] Error sending leave message to player {targetPlayer.PlayerName ?? "Unknown"}: {ex.Message}");
+                            Console.WriteLine($"[Rezads] Error sending leave message to player {targetPlayer.PlayerName ?? "Unknown"}: {ex.Message}");
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"[AutomaticAds] Error in HandlePlayerLeave NextFrame: {ex.Message}");
+                    Console.WriteLine($"[Rezads] Error in HandlePlayerLeave NextFrame: {ex.Message}");
                 }
                 finally
                 {
@@ -294,7 +294,7 @@ public class JoinLeaveService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error in HandlePlayerLeave: Player '{playerName ?? "Unknown"}' - {ex.Message}");
+            Console.WriteLine($"[Rezads] Error in HandlePlayerLeave: Player '{playerName ?? "Unknown"}' - {ex.Message}");
             _processedLeaves.Remove(steamId);
         }
     }
@@ -311,7 +311,7 @@ public class JoinLeaveService
             }
             catch
             {
-                Console.WriteLine("[AutomaticAds] Error processing player disconnect: Player object is invalid.");
+                Console.WriteLine("[Rezads] Error processing player disconnect: Player object is invalid.");
             }
         }
     }
