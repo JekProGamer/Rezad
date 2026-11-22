@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
-namespace AutomaticAds.Config.Models;
+namespace Rezads.Config.Models;
 
 public class JoinLeaveConfig
 {
@@ -83,7 +83,7 @@ public class JoinLeaveConfig
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error parsing JoinLeave message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error parsing JoinLeave message: {ex.Message}");
         }
 
         return string.Empty;
