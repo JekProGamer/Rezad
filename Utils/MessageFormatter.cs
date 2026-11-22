@@ -5,11 +5,11 @@ using CounterStrikeSharp.API.Modules.Cvars;
 using CounterStrikeSharp.API.Modules.Admin;
 using System.Text.RegularExpressions;
 
-using AutomaticAds.Models;
-using AutomaticAds.Config;
-using AutomaticAds.Config.Models;
+using Rezads.Models;
+using Rezads.Config;
+using Rezads.Config.Models;
 
-namespace AutomaticAds.Utils;
+namespace Rezads.Utils;
 
 public class MessageFormatter
 {
@@ -93,7 +93,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error formatting ad message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error formatting ad message: {ex.Message}");
             return string.Empty;
         }
     }
@@ -118,7 +118,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error formatting ad message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error formatting ad message: {ex.Message}");
             return string.Empty;
         }
     }
@@ -148,7 +148,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error formatting join/leave message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error formatting join/leave message: {ex.Message}");
             return string.Empty;
         }
     }
@@ -174,7 +174,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error formatting welcome message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error formatting welcome message: {ex.Message}");
             return string.Empty;
         }
     }
@@ -205,7 +205,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error formatting basic join/leave message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error formatting basic join/leave message: {ex.Message}");
             return string.Empty;
         }
     }
@@ -225,7 +225,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error formatting basic welcome message: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error formatting basic welcome message: {ex.Message}");
             return string.Empty;
         }
     }
@@ -253,7 +253,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error getting player language: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error getting player language: {ex.Message}");
             return "en";
         }
     }
@@ -279,7 +279,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error mapping country code to language: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error mapping country code to language: {ex.Message}");
             return _config?.DefaultLanguage ?? "en";
         }
     }
@@ -363,7 +363,7 @@ public class MessageFormatter
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[AutomaticAds] Error updating server variables: {ex.Message}");
+                Console.WriteLine($"[Rezads] Error updating server variables: {ex.Message}");
                 if (_cachedServerVariables.Count == 0)
                 {
                     _cachedServerVariables = GetFallbackServerVariables();
@@ -453,7 +453,7 @@ public class MessageFormatter
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"[AutomaticAds] Error checking admin permissions for player {player.PlayerName}: {ex.Message}");
+                    Console.WriteLine($"[Rezads] Error checking admin permissions for player {player.PlayerName}: {ex.Message}");
                     continue;
                 }
             }
@@ -462,7 +462,7 @@ public class MessageFormatter
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error getting administrator info: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error getting administrator info: {ex.Message}");
             return new List<string>();
         }
     }
