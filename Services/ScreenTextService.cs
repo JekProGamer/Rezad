@@ -3,9 +3,9 @@ using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Utils;
 using System.Drawing;
 
-using AutomaticAds.Managers;
+using Rezads.Managers;
 
-namespace AutomaticAds.Services;
+namespace Rezads.Services;
 
 public class ScreenTextService
 {
@@ -44,14 +44,14 @@ public class ScreenTextService
         var anchorEntity = EnsurePlayerAnchor(player);
         if (anchorEntity == null)
         {
-            Console.WriteLine($"[AutomaticAds] Error: Could not create or get anchor entity for {player.PlayerName}");
+            Console.WriteLine($"[Rezads] Error: Could not create or get anchor entity for {player.PlayerName}");
             return;
         }
 
         var vectorData = CalculateTextPosition(player, positionX, positionY);
         if (!vectorData.HasValue)
         {
-            Console.WriteLine($"[AutomaticAds] Error: Could not calculate position for {player.PlayerName}");
+            Console.WriteLine($"[Rezads] Error: Could not calculate position for {player.PlayerName}");
             return;
         }
 
@@ -127,7 +127,7 @@ public class ScreenTextService
             var newAnchor = Utilities.CreateEntityByName<CPointOrient>("point_orient");
             if (newAnchor == null || !newAnchor.IsValid)
             {
-                Console.WriteLine($"[AutomaticAds] Error: Could not create CPointOrient for {player.PlayerName}");
+                Console.WriteLine($"[Rezads] Error: Could not create CPointOrient for {player.PlayerName}");
                 return null;
             }
 
@@ -139,7 +139,7 @@ public class ScreenTextService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error creating anchor entity for {player.PlayerName}: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error creating anchor entity for {player.PlayerName}: {ex.Message}");
             return null;
         }
     }
@@ -193,7 +193,7 @@ public class ScreenTextService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error calculating text position: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error calculating text position: {ex.Message}");
             return null;
         }
     }
@@ -246,7 +246,7 @@ public class ScreenTextService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error creating text entity: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error creating text entity: {ex.Message}");
             return null;
         }
     }
