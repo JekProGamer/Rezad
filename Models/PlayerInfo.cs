@@ -1,4 +1,4 @@
-namespace AutomaticAds.Models;
+namespace Rezads.Models;
 
 public class PlayerInfo
 {
