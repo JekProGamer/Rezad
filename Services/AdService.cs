@@ -3,12 +3,12 @@ using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Utils;
 using CounterStrikeSharp.API.Modules.Timers;
 
-using AutomaticAds.Config;
-using AutomaticAds.Config.Models;
-using AutomaticAds.Managers;
-using AutomaticAds.Utils;
+using Rezads.Config;
+using Rezads.Config.Models;
+using Rezads.Managers;
+using Rezads.Utils;
 
-namespace AutomaticAds.Services;
+namespace Rezads.Services;
 
 public enum AdType
 {
@@ -260,7 +260,7 @@ public class AdService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error sending ad '{GetAdPreview(ad)}': {ex.Message}");
+            Console.WriteLine($"[Rezads] Error sending ad '{GetAdPreview(ad)}': {ex.Message}");
         }
     }
 
@@ -299,7 +299,7 @@ public class AdService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error sending on-dead ads to player {deadPlayer?.PlayerName ?? "Unknown"}: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error sending on-dead ads to player {deadPlayer?.PlayerName ?? "Unknown"}: {ex.Message}");
         }
     }
 
@@ -331,7 +331,7 @@ public class AdService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error checking if ad '{GetAdPreview(ad)}' should be sent to player {player.PlayerName ?? "Unknown"}: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error checking if ad '{GetAdPreview(ad)}' should be sent to player {player.PlayerName ?? "Unknown"}: {ex.Message}");
             return false;
         }
     }
@@ -462,13 +462,13 @@ public class AdService
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"[AutomaticAds] Error in SendAdToPlayer NextFrame: {ex.Message}");
+                    Console.WriteLine($"[Rezads] Error in SendAdToPlayer NextFrame: {ex.Message}");
                 }
             });
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[AutomaticAds] Error sending ad to player {player.PlayerName ?? "Unknown"}: {ex.Message}");
+            Console.WriteLine($"[Rezads] Error sending ad to player {player.PlayerName ?? "Unknown"}: {ex.Message}");
         }
     }
 }
