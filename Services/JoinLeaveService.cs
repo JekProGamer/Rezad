@@ -29,10 +29,7 @@ public class JoinLeaveService
 
     public async void HandlePlayerJoin(CCSPlayerController player)
     {
-        if (!_config.EnableJoinLeaveMessages)
-            return;
-
-        if (!ShouldProcessJoinLeaveMessage(player))
+        if (!player.IsValidPlayer())
             return;
 
         ulong steamId;
@@ -49,6 +46,15 @@ public class JoinLeaveService
         {
             return;
         }
+
+        var specialJoin = _config.SpecialJoinMessages.FirstOrDefault(x => x.SteamID == steamId && !string.IsNullOrWhiteSpace(x.Message));
+        if (specialJoin != null)
+        {
+            SendSpecialJoinMessage(player, specialJoin.Message);
+        }
+
+        if (!_config.EnableJoinLeaveMessages || !ShouldProcessJoinLeaveMessage(player))
+            return;
 
         if (_processedJoins.Contains(steamId))
             return;
@@ -148,6 +154,38 @@ public class JoinLeaveService
         {
             Console.WriteLine($"[AutomaticAds] Error in HandlePlayerJoin: Player '{playerName ?? "Unknown"}' - {ex.Message}");
             _processedJoins.Remove(steamId);
+        }
+    }
+
+    private void SendSpecialJoinMessage(CCSPlayerController player, string messageTemplate)
+    {
+        try
+        {
+            var playerInfo = _playerManager.GetBasicPlayerInfo(player);
+            string formattedPrefix = _messageFormatter.FormatMessage(_config.ChatPrefix);
+            string message = _messageFormatter.FormatMessageWithPlayerInfo(messageTemplate, playerInfo, formattedPrefix);
+
+            Server.NextFrame(() =>
+            {
+                if (!player.IsValidPlayer())
+                    return;
+
+                foreach (var targetPlayer in _playerManager.GetValidPlayers())
+                {
+                    try
+                    {
+                        targetPlayer.PrintToChat(message);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"[AutomaticAds] Error sending special join message to {targetPlayer.PlayerName ?? "Unknown"}: {ex.Message}");
+                    }
+                }
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[AutomaticAds] Error preparing special join message: {ex.Message}");
         }
     }
 
