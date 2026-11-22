@@ -1,4 +1,4 @@
-# AutomaticAds CS2
+# Rezads CS2
 This plugin allows you to schedule and display announcements in the chat at customizable intervals. Each announcement is accompanied by a brief sound effect to capture players' attention seamlessly.
 
 > [!CAUTION]
@@ -15,7 +15,7 @@ For detailed installation instructions, configuration examples, and advanced usa
 
 ### Installation
 1. Install [CounterStrike Sharp](https://github.com/roflmuffin/CounterStrikeSharp) and [Metamod:Source](https://www.sourcemm.net/downloads.php/?branch=master)
-2. Download [AutomaticAds.zip](https://github.com/wiruwiru/AutomaticAds-CS2/releases/latest) from releases
+2. Download [Rezads.zip](https://github.com/wiruwiru/AutomaticAds-CS2/releases/latest) from releases
 3. Extract and upload to your game server
 4. Start server and configure the generated config file
 
