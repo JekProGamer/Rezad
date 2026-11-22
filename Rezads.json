@@ -1,0 +1,83 @@
+{
+  "ChatPrefix": "[{GREEN}Rezads{WHITE}]{WHITE}",
+  "GlobalPlaySound": "ui/panorama/popup_reveal_01",
+  "GlobalInterval": 30.0,
+  "GlobalPositionX": -1.5,
+  "GlobalPositionY": 1.0,
+  "AdminFlag": "@css/generic",
+  "SendAdsInOrder": true,
+  "UseWelcomeMessage": true,
+  "JoinLeaveMessages": true,
+  "JoinLeaveExcludedNames": [
+    "hvh.gg",
+    "hvh.dog"
+  ],
+  "SpecialJoinMessages": [],
+  "WelcomeDelay": 3.0,
+  "CenterHtmlDisplayTime": 5.0,
+  "ScreenDisplayTime": 5.0,
+  "UseMultiLang": true,
+  "DefaultLanguage": "en",
+  "Welcome": [
+    {
+      "WelcomeMessage": "{prefix} {BLUE}Welcome to the server {playername}! {RED}Playing on {map} with {players}/{maxplayers} players.",
+      "viewFlag": "all",
+      "excludeFlag": "",
+      "disableSound": false
+    }
+  ],
+  "JoinLeave": [
+    {
+      "JoinMessage": "{BLUE}{playername} ({id64}) joined the server from {country} ({country_code})! {RED}Online: {players}/{maxplayers}.",
+      "LeaveMessage": "{BLUE}{playername} ({id64}) left the server!"
+    }
+  ],
+  "Ads": [
+    {
+      "message": "{prefix} {RED}Rezads is the best plugin!",
+      "map": "all",
+      "interval": 600,
+      "disableSound": false,
+      "viewFlag": "all"
+    },
+    {
+      "message": "{prefix} {BLUE}Welcome to {hostname}! {RED}The time is {time} of {date}, playing in {map} with {players}/{maxplayers}. Connect {ip}",
+      "map": "all",
+      "interval": 800,
+      "disableSound": false,
+      "viewFlag": "all"
+    },
+    {
+      "message": "{prefix} {BLUE}Thank you for supporting the server! {GOLD}Your contribution is greatly appreciated.",
+      "map": "all",
+      "interval": 1000,
+      "disableSound": true,
+      "disableOrder": true,
+      "viewFlag": "@css/vip"
+    },
+    {
+      "message": "{prefix} {GOLD}Congratulations {playername}, you are playing on Mirage.",
+      "excludeFlag": "@css/vip",
+      "map": "de_mirage",
+      "interval": 1400,
+      "disableSound": true,
+      "viewFlag": "all",
+      "triggerAd": [
+        "map",
+        "currentmap"
+      ],
+      "playSoundName": "sound/ui/beep22.wav"
+    },
+    {
+      "message": "<font class='fontSize-m' color='orange'>This server uses</font><br><font class='fontSize-l' style='color:red;'>Rezads</font></font>",
+      "viewFlag": "@css/generic",
+      "displayType": "CenterHtml",
+      "onDead": true
+    },
+    {
+      "message": "Thanks for playing {playername}",
+      "displayType": "Screen",
+      "disableSound": true
+    }
+  ]
+}
