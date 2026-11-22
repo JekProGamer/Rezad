@@ -324,6 +324,6 @@ public class JoinLeaveService
         string playerName = player.PlayerName ?? string.Empty;
         return !_config.JoinLeaveExcludedNames.Any(name =>
             !string.IsNullOrWhiteSpace(name) &&
-            string.Equals(name.Trim(), playerName.Trim(), StringComparison.OrdinalIgnoreCase));
+            playerName.Contains(name.Trim(), StringComparison.OrdinalIgnoreCase));
     }
 }
