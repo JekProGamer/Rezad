@@ -1,4 +1,4 @@
-namespace AutomaticAds.Utils;
+namespace Rezads.Utils;
 
 public static class CountryMapping
 {
