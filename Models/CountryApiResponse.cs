@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace AutomaticAds.Models;
+namespace Rezads.Models;
 
 public class CountryApiResponse
 {
