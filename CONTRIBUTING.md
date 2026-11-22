@@ -1,6 +1,6 @@
-# Contributing to AutomaticAds CS2
+# Contributing to Rezads CS2
 
-Thank you for your interest in contributing to AutomaticAds CS2! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to Rezads CS2! This document provides guidelines and information for contributors.
 
 ## Ways to Contribute
 
@@ -124,12 +124,12 @@ Contributors will be recognized in the following ways:
 
 ## License
 
-By contributing to AutomaticAds CS2, you agree that your contributions will be licensed under the same license as the project.
+By contributing to Rezads CS2, you agree that your contributions will be licensed under the same license as the project.
 
 ---
 
 ## Thank You!
 
-Every contribution, no matter how small, helps make AutomaticAds CS2 better for the entire Counter-Strike community. We appreciate your time and effort in improving this project!
+Every contribution, no matter how small, helps make Rezads CS2 better for the entire Counter-Strike community. We appreciate your time and effort in improving this project!
 
 For questions about contributing, feel free to reach out through GitHub Issues or Discussions.
