@@ -1,6 +1,6 @@
 # Plugin Behavior & Features
 
-This document provides detailed information about AutomaticAds CS2 plugin behavior, features, and advanced usage scenarios.
+This document provides detailed information about Rezads CS2 plugin behavior, features, and advanced usage scenarios.
 
 ## Core Features
 
