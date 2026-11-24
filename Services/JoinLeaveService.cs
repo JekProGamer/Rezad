@@ -51,6 +51,7 @@ public class JoinLeaveService
         if (specialJoin != null)
         {
             SendSpecialJoinMessage(player, specialJoin.Message);
+            return;
         }
 
         if (!_config.EnableJoinLeaveMessages || !ShouldProcessJoinLeaveMessage(player))
